@@ -34,3 +34,9 @@ URL final: `/blog/meu-artigo`.
 npm install
 npm run dev
 ```
+
+
+## Segurança
+
+- O projeto fixa `next-mdx-remote` em versão segura via `overrides` no `package.json` para mitigar CVE reportada em deploy.
+
