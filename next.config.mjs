@@ -6,7 +6,8 @@ const withNextra = nextra({
 })
 
 export default withNextra({
-  reactStrictMode: true,
+
   poweredByHeader: false,
   compress: true
+  reactStrictMode: true
 })
