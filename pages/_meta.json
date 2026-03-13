@@ -1,0 +1,14 @@
+{
+  "index": {
+    "title": "Início",
+    "type": "page"
+  },
+  "blog": {
+    "title": "Blog",
+    "type": "page"
+  },
+  "sobre": {
+    "title": "Sobre",
+    "type": "page"
+  }
+}
