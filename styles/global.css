@@ -1,0 +1,237 @@
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f8fafc;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #111111;
+  --primary-contrast: #ffffff;
+  --accent: #2563eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1020;
+    --bg-soft: #111827;
+    --text: #f3f4f6;
+    --muted: #9ca3af;
+    --border: #1f2937;
+    --primary: #f9fafb;
+    --primary-contrast: #0b1020;
+    --accent: #60a5fa;
+  }
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+main,
+main p,
+main li,
+main blockquote {
+  max-width: 72ch;
+}
+
+main p,
+main li {
+  line-height: 1.8;
+}
+
+.home-news {
+  margin-top: 1.25rem;
+}
+
+.hero-news {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem;
+  margin: 1.2rem 0;
+  background:
+    radial-gradient(circle at top right, rgba(99, 102, 241, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.13) 0%, transparent 42%),
+    var(--bg-soft);
+}
+
+.hero-kicker {
+  color: var(--accent);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.hero-news h2 {
+  margin: 0.4rem 0;
+  letter-spacing: -0.02em;
+}
+
+.hero-news p {
+  color: var(--muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  background: var(--primary);
+  color: var(--primary-contrast) !important;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+}
+
+.hero-cta.ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text) !important;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.news-card {
+  grid-column: span 4;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  background: var(--bg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.news-card h3 {
+  font-size: 1.04rem;
+  margin: 0.4rem 0;
+  line-height: 1.3;
+}
+
+.news-card p {
+  margin: 0.25rem 0;
+  color: var(--muted);
+}
+
+.news-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-weight: 600;
+}
+
+.social-proof {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  background: var(--bg-soft);
+}
+
+.newsletter {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  background: var(--bg-soft);
+}
+
+.newsletter h3 {
+  margin: 0 0 0.3rem;
+}
+
+.newsletter p {
+  color: var(--muted);
+}
+
+.newsletter-form {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.newsletter-form button {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 0.65rem 0.9rem;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  font-weight: 600;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 1024px) {
+  .news-card {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-news,
+  .newsletter,
+  .social-proof {
+    padding: 1rem;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .news-card {
+    grid-column: auto;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+}
