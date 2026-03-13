@@ -5,6 +5,7 @@ const withNextra = nextra({
   themeConfig: './theme.config.jsx'
 })
 
+
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -12,4 +13,6 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx']
 }
 
-export default withNextra(nextConfig)
+export default withNextra(nextConfig){
+  reactStrictMode: true
+})
